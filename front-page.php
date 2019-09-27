@@ -26,5 +26,4 @@ if ( ! empty( get_option( 'page_on_front' ) ) ) {
 
 }
 
-get_sidebar();
 get_footer();

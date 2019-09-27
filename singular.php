@@ -57,5 +57,4 @@ if ( have_posts() ) {
 	}
 }
 
-get_sidebar();
 get_footer();

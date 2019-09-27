@@ -13,11 +13,9 @@ import { AppContainer } from "./AppContainer";
 import { Template } from "../Template/Template";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { ContextView } from "../Context/ContextView";
-import { ContextSidebar } from "../Context/ContextSidebar";
 
 export const App: React.ComponentType = props => {
-	const { is_ready, setIsReady } = useContext(ContextView);
-	const { menu } = useContext(ContextSidebar);
+	const { setIsReady } = useContext(ContextView);
 
 	useFetchMenu();
 	useAddScriptsInitial();
@@ -34,7 +32,7 @@ export const App: React.ComponentType = props => {
 	return (
 		<AppContainer>
 			<Template />
-			{is_ready && !!menu.length && <Sidebar />}
+			<Sidebar />
 		</AppContainer>
 	);
 };

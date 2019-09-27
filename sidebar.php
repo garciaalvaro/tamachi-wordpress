@@ -1,1 +1,1 @@
-<?php
+<nav id="tamachi-sidebar"></nav>
