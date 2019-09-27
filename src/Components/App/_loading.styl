@@ -1,0 +1,22 @@
+/**
+ * App - Loading
+ */
+
++prefix-classes('tamachi-')
+
+	#tamachi-content:before
+		content ""
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		background-color var(--background_color)
+		transition opacity .2s $e_standard, z-index 0s .2s
+		z-index -1
+		opacity 0
+
+		.is_loading &
+			transition opacity 1.2s $e_standard
+			opacity .5
+			z-index 1

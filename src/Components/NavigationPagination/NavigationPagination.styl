@@ -1,0 +1,40 @@
+/**
+ * Navigation Pagination
+ */
+
++prefix-classes('tamachi-')
+
+	#tamachi-navigation-pagination
+		padding $post_header_paddingb $archive_item_paddinglr $layout_singular_padding
+		display flex
+		flex-direction column
+		margin-top auto
+
+	.navigation-pagination-link
+		padding 0 .3em
+		transition transform .2s $e_deceleration
+		display inline-block
+		position relative
+
+		&:first-child
+			margin-left -.3em
+
+		&.is_active
+			cursor default
+
+		&:before
+			position absolute
+			content ""
+			opacity .3
+			bottom -.1rem
+			left 50%
+			transform translateX(-50%)
+			width 50%
+			height 0
+			background-color currentColor
+			transition opacity .15s $e_standard, height .15s $e_deceleration
+
+		&.is_active:before
+		&:hover:before
+			opacity .5
+			height .5rem

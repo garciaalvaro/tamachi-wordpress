@@ -1,0 +1,96 @@
+/**
+ * App - Typography
+ */
+
++prefix-classes('tamachi-')
+
+	html
+		font-size 10px
+
+	body
+		font-family 'Roboto'
+		font-size 1.9rem
+		line-height 1.7
+		letter-spacing 0.05em
+		font-weight 300
+
+	#tamachi-sidebar
+		font-size 17px
+		font-size 1.8rem
+		line-height 1.5
+
+	#tamachi-content .navigation-breadcrumbs
+		color var(--color_06)
+		font-family 'Roboto Condensed'
+		font-size 20px
+		font-size 2rem
+		line-height 1.5
+
+	#tamachi-post-link
+		font-family 'Roboto Condensed'
+		font-size 60px
+		font-size 6rem
+		line-height 1
+		letter-spacing 0
+		font-weight 400
+		text-transform uppercase
+
+	#tamachi-navigation-next-label
+	#tamachi-navigation-pagination-label
+		text-transform lowercase
+
+	#tamachi-navigation-next-link
+		font-family 'Roboto Condensed'
+		font-size 30px
+		font-size 3rem
+		line-height 1.2
+		font-weight 400
+
+	#tamachi-navigation-pagination-links
+		font-family 'Roboto Condensed'
+		font-size 2.8rem
+		line-height 1.5
+
+	.menu-item-container.is_active
+		font-weight 500
+		font-style italic
+
+	strong
+	h1
+	h2
+	h3
+	h4
+	h5
+	h6
+		font-weight 500
+
+	#tamachi-page h3.post-title
+		font-size 2.1rem
+		font-weight 400
+
+	#tamachi-search-input
+
+		&::placeholder
+			font-weight 300
+			font-size .9em
+
+#tamachi-post
+
+	.wp-block-melonpan-block-code code
+		font-size .85em
+
+	.mbcode-label
+		font-weight 400
+
+#tamachi-home
+
+	.wp-block-melonpan-block-site-title
+	.wp-block-melonpan-block-post-list a
+		font-family 'Roboto Condensed'
+		font-size 2.8rem
+		font-weight 300
+
+@media screen and (max-width: 600px)
+
+	html
+		font-size 9px

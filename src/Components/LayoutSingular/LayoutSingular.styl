@@ -1,0 +1,124 @@
+/**
+ * Layout Singular
+ */
+
++prefix-classes('tamachi-')
+
+	#tamachi-post-header
+		padding-bottom $post_header_paddingb
+		margin 0
+		flex 0 0 auto
+
+	#tamachi-post-title
+		padding-top 3.5rem
+		word-break break-word
+		hyphens auto
+		display block
+		font-size inherit
+		font-weight inherit
+		margin 0
+
+		.navigation-breadcrumbs + &
+			padding-top .5rem
+
+	#tamachi-navigation-next
+		margin-top auto
+
+	.layout-singular
+
+		#tamachi-post
+			max-width 90rem
+			padding $layout_singular_padding
+			min-height 100vh
+			display flex
+			flex-direction column
+
+#tamachi-post-content
+	border-top .2rem solid
+	word-wrap break-word
+	padding-top $paragraph_margint
+
+	.wp-block-column
+		margin-bottom 0
+
+	figure img
+		display block
+
+	.wp-block-image
+		border .1rem solid var(--color_02)
+
+	li code
+		background-color var(--color_01)
+		font-size .85em
+		padding .3em .5em
+
+	p code
+		background-color var(--color_01)
+		font-size .85em
+		padding .3em .5em
+
+	.wp-block-separator
+		border-top 1px solid var(--color_02)
+		border-bottom none
+		border-left none
+		border-right none
+
+	p
+	hr
+	ul
+		margin 0
+		margin-top $paragraph_margint
+
+		&:first-child
+			margin-top 0
+
+	> figure
+	> hr
+	> a
+	> div
+	> span
+	> h1
+	> h2
+	> h3
+	> h4
+	> h5
+	> h6
+		margin 0
+		margin-top $paragraph_margint
+
+		&:first-child
+			margin-top 0
+
+	> h1
+	> h2
+	> h3
+	> h4
+	> h5
+	> h6
+		margin-top 2*$paragraph_margint
+
+	.alignfull
+		width "calc(100vw - %s)" % $sidebar_width
+		margin-left -($layout_singular_padding)
+
+	a
+		position relative
+
+		&:before
+			position absolute
+			content ""
+			opacity .3
+			bottom -.1rem
+			left 0
+			width 100%
+			height .3rem
+			background-color currentColor
+			transition opacity .15s $e_standard, height .15s $e_deceleration
+
+		&:hover:before
+			opacity .5
+			height .5rem
+
+	ul
+	ol
+		padding-left 2rem

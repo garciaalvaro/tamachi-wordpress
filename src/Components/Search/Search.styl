@@ -1,0 +1,107 @@
+/**
+ * Search
+ */
+
++prefix-classes('tamachi-')
+
+	#tamachi-search
+		position absolute
+		width 100%
+		height 100%
+		top 0
+		left 0
+		padding 0 $sidebar_paddinglr
+		z-index 200
+		display flex
+		flex-direction column
+
+		&:before
+			content ""
+			position absolute
+			width 100%
+			height 100%
+			top 0
+			left 0
+			z-index -1
+			background var(--background_color)
+			opacity .96
+
+		.navigation-breadcrumbs
+			font-size .9em
+			margin-bottom .2em
+
+		.button-toggle_search
+			margin-top 1.5rem
+			margin-bottom 1.5rem
+			margin-left auto
+			margin-right -(.75 * $sidebar_paddinglr)
+			animation force_hover_style .2s
+
+		.search-info
+		.post
+			padding $sidebar_paddinglr (1.2 * $sidebar_paddinglr)
+			display flex
+			flex-direction column
+			transition background-color .2s $e_standard
+			flex 0 0 100%
+
+		.writing
+		.fetching
+			.post
+				opacity .3
+				transition opacity .6s $e_standard
+		.post
+			border-bottom 0.1rem solid var(--color_01)
+			transition opacity .2s $e_standard
+
+			&:hover
+				background-color var(--color_007)
+
+		.post-content
+			margin-top .7em
+
+		.post-title + .post-content
+			margin-top 1.2em
+
+		.post-title
+			margin 0
+			font-size inherit
+
+		.post-title-query
+		.post-content-query
+			border-bottom .5rem solid
+
+	#tamachi-search-results
+		margin-top .4rem
+		align-self flex-end
+		overflow hidden
+		width 70rem
+		max-width calc(100vw - 6rem)
+		background var(--background_color)
+		border .2rem solid
+		max-height calc(100vh - 15rem)
+
+	#tamachi-search-input
+		padding .5em 0
+		display block
+		width 100%
+		color inherit
+		font-size inherit
+
+		&
+		&:focus
+			background none
+			box-shadow none
+			outline none
+			border none
+			border-bottom .2rem solid
+
+	#tamachi-search-label
+		pointer-events none
+
+// When the element is mounted it comes from a hover state in the clone element
+@keyframes force_hover_style {
+	0%, 100% {
+		color var(--color_04)
+	}
+}

@@ -1,0 +1,49 @@
+/**
+ * Layout Home
+ */
+
+.tamachi-layout-home
+
+	#tamachi-sidebar
+		display none
+
+	#tamachi-content .wp-block-melonpan-block-site-title
+		margin 0
+
+	.wp-block-melonpan-block-site-title
+		cursor default
+		font-size inherit
+		font-weight inherit
+
+	.wp-block-melonpan-block-post-list
+		margin 0
+		padding 0
+		list-style none
+
+	.wp-block-melonpan-block-site-title
+	.wp-block-melonpan-block-post-list a
+		display block
+		position relative
+		transition background-color .1s $e_deceleration
+		border-bottom .1rem solid var(--color_01)
+		padding $home_item_paddingtb $home_item_paddinglr
+
+	.wp-block-melonpan-block-post-list a:hover
+		margin-top -.1rem
+		border-top .1rem solid var(--color_003)
+		background-color var(--color_007)
+
+	// TODO: animate the transition from Home to the next view
+	&.tamachi-is_loading
+
+		#tamachi-content:before
+			content normal
+
+		.wp-block-melonpan-block-site-title
+		.wp-block-melonpan-block-post-list a
+			transition opacity 2s $e_standard
+			transform translateZ(0)
+			opacity .1
+
+			&.tamachi-is_active
+				opacity 1

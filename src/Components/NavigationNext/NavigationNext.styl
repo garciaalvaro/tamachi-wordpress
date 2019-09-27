@@ -1,0 +1,32 @@
+/**
+ * Navigation Next
+ */
+
+#tamachi-navigation-next
+	padding-top $post_header_paddingb
+	display flex
+	flex-direction row
+	flex-flow row wrap
+
+#tamachi-navigation-next-label
+	flex 0 0 100%
+
+#tamachi-navigation-next-link
+	position relative
+	flex 0 0 auto
+
+	&:before
+		position absolute
+		content ""
+		opacity .3
+		bottom -.1rem
+		left 0
+		width 100%
+		height 0
+		background-color currentColor
+		transition opacity .15s $e_standard, height .15s $e_deceleration
+
+	&.is_active:before
+	&:hover:before
+		opacity .5
+		height .5rem

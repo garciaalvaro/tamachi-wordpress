@@ -1,0 +1,47 @@
+/**
+ * Navigation Breadcrumbs
+ */
+
++prefix-classes('tamachi-')
+
+	.navigation-breadcrumbs
+
+		ol
+			margin 0
+			padding 0
+			list-style none
+			display flex
+			flex-flow row wrap
+
+		a
+			cursor pointer
+			position relative
+
+			&:before
+				position absolute
+				content ""
+				opacity .3
+				bottom -.1rem
+				left 0
+				width 100%
+				height 0
+				background-color currentColor
+				transition opacity .15s $e_standard, height .15s $e_deceleration
+
+			&:hover:before
+				opacity .5
+				height .5rem
+
+		span
+			cursor default
+
+		li
+			display flex
+			padding-right .5em
+
+			&:last-child
+				padding-right 0
+
+			+ li:before
+				content ">"
+				padding-right .5em
