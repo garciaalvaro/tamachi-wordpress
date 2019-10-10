@@ -1,11 +1,10 @@
 import { useState } from "react";
 
+import { getColorScheme } from "utils/tools";
 import { Button, Icon } from "utils/Components";
 
 export const ButtonColor: React.ComponentType = props => {
-	const [color, setColor] = useState<Color>(
-		(localStorage.getItem("color") as Color | null) || "light"
-	);
+	const [color, setColor] = useState<Color>(getColorScheme());
 
 	return (
 		<Button
