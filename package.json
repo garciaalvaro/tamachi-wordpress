@@ -48,7 +48,6 @@
 		"stylus": "^0.54.7",
 		"stylus-loader": "^3.0.2",
 		"typescript": "^3.6.3",
-		"url-loader": "^2.1.0",
 		"webpack": "^4.41.0",
 		"webpack-cli": "^3.3.9",
 		"webpack-loader-clean-pragma": "^1.0.2"

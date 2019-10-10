@@ -33,10 +33,6 @@ export default {
 	module: {
 		rules: [
 			{
-				test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-				use: ["url-loader?limit=100000"]
-			},
-			{
 				test: /\.tsx?$/,
 				exclude: /node_modules/,
 				loader: "babel-loader",
@@ -48,7 +44,10 @@ export default {
 				test: /\.(css|styl)$/,
 				use: [
 					MiniCssExtractPlugin.loader,
-					"css-loader",
+					{
+						loader: "css-loader",
+						options: { url: false }
+					},
 					{
 						loader: "stylus-loader",
 						options: {
