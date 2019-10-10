@@ -33,7 +33,7 @@ export const Sidebar: React.ComponentType = props => {
 	}, [window_height, layout, sidebar_is_open]);
 
 	if (!is_ready || !menu.length) {
-		return <Nav id="sidebar" ref={sidebar_ref}></Nav>;
+		return <Nav id="sidebar"></Nav>;
 	}
 
 	if (sidebar_is_hidden && !sidebar_is_open) {
