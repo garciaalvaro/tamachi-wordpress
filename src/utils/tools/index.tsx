@@ -1,6 +1,7 @@
 export { addPrefix } from "./addPrefix";
 export { appendScriptInDocument } from "./appendScriptInDocument";
 export { appendStyleInDocument } from "./appendStyleInDocument";
+export { getColorScheme } from "./getColorScheme";
 export { getPageData } from "./getPageData";
 export { getStringMatches } from "./getStringMatches";
 export { prepareMenu } from "./prepareMenu";

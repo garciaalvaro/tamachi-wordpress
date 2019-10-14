@@ -9,6 +9,10 @@
 		margin 0
 		flex 0 0 auto
 
+		.navigation-breadcrumbs
+			// Small margin to compensate the difference of font-size with #tamachi-post-title
+			margin-left 5px
+
 	#tamachi-post-title
 		padding-top 3.5rem
 		word-break break-word
@@ -38,6 +42,23 @@
 	word-wrap break-word
 	padding-top $paragraph_margint
 
+	.tamachi-page-list
+		padding 0
+		list-style none
+
+		li
+			padding .5em 0
+
+	.tamachi-links
+		padding 0
+		list-style none
+
+		li
+			display inline-block
+
+			+ li
+				padding-left 1em
+
 	.wp-block-column
 		margin-bottom 0
 
@@ -45,6 +66,7 @@
 		display block
 
 	.wp-block-image
+	.mbi-slider-images img
 		border .1rem solid var(--color_02)
 
 	li code
@@ -98,6 +120,8 @@
 		margin-top 2*$paragraph_margint
 
 	.alignfull
+		margin-top $layout_singular_padding
+		max-width none
 		width "calc(100vw - %s)" % $sidebar_width
 		margin-left -($layout_singular_padding)
 

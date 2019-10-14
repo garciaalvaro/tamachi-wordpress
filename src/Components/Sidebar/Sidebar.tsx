@@ -13,13 +13,16 @@ import { Search } from "../Search/Search";
 import { ButtonSidebar } from "../Buttons/ButtonSidebar";
 
 export const Sidebar: React.ComponentType = props => {
-	const { search_is_open, sidebar_is_open, sidebar_is_hidden } = useContext(
-		ContextSidebar
-	);
+	const {
+		search_is_open,
+		sidebar_is_open,
+		sidebar_is_hidden,
+		menu
+	} = useContext(ContextSidebar);
 	const sidebar_ref = useRef<HTMLDivElement | null>(null);
 	const { window_height } = useWindowSize();
 	const [height, setHeight] = useState(window_height);
-	const { layout } = useContext(ContextView);
+	const { layout, is_ready } = useContext(ContextView);
 
 	useEffect(() => {
 		if (!sidebar_ref.current) {
@@ -28,6 +31,10 @@ export const Sidebar: React.ComponentType = props => {
 
 		setHeight(sidebar_ref.current.clientHeight);
 	}, [window_height, layout, sidebar_is_open]);
+
+	if (!is_ready || !menu.length) {
+		return <Nav id="sidebar"></Nav>;
+	}
 
 	if (sidebar_is_hidden && !sidebar_is_open) {
 		return (

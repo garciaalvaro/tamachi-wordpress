@@ -18,8 +18,11 @@ body
 body
 	overflow hidden
 
-	::selection
-		background-color var(--accent_color)
+	&
+	#tamachi-post-content
+		::selection
+			background-color var(--color_085)
+			color var(--background_color)
 
 #tamachi-page
 	display flex
