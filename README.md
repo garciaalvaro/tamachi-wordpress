@@ -16,7 +16,7 @@ This theme is currently in beta stage. This means that although it works (as can
 
 ## Features
 
-- Built in React, with hooks and the Context API.
+- Built in TypeScript with React, using hooks and the Context API.
 - It loads content dynamically and updates the browser routes based on the current page.
 - To improve SEO it renders the initial page content from the server and hydrates it into React.
 - It comes with a color scheme toggle button. Depending on the user OS color scheme the theme will initially display in a light or dark scheme. If toggled this setting will remain in the browsers localstorage so it can persist after a refresh.
