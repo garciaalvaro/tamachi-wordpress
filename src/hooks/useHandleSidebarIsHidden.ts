@@ -9,6 +9,6 @@ export const useHandleSidebarIsHidden = () => {
 
 	// Update sidebar_is_hidden if the window resizes.
 	useEffect(() => {
-		setSidebarIsHidden(window_width < 768);
+		setSidebarIsHidden(window_width < 769);
 	}, [window_width]);
 };

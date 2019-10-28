@@ -22,7 +22,7 @@ const window_width =
 	window.innerWidth;
 
 export const ContextSidebar = createContext<ContextProps>({
-	sidebar_is_hidden: window_width < 768,
+	sidebar_is_hidden: window_width < 769,
 	setSidebarIsHidden: noop,
 	sidebar_is_open: false,
 	setSidebarIsOpen: noop,
@@ -36,7 +36,7 @@ export const ContextSidebarProvider: React.ComponentType<
 	ProviderProps
 > = props => {
 	const [menu, setMenu] = useState([]);
-	const [sidebar_is_hidden, setSidebarIsHidden] = useState(window_width < 768);
+	const [sidebar_is_hidden, setSidebarIsHidden] = useState(window_width < 769);
 	const [sidebar_is_open, setSidebarIsOpen] = useState(false);
 	const [search_is_open, setSearchIsOpen] = useState(false);
 
