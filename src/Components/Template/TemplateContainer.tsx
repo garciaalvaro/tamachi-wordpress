@@ -42,11 +42,7 @@ export const TemplateContainer: React.ComponentType<Props> = props => {
 
 	return (
 		<MainRef id="content" ref={template_ref}>
-			<SimpleBar
-				ref={simplebar_ref}
-				style={{ height }}
-				data-simplebar-auto-hide={false}
-			>
+			<SimpleBar ref={simplebar_ref} style={{ height }} autoHide={false}>
 				{children}
 			</SimpleBar>
 		</MainRef>
