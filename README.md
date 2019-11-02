@@ -39,7 +39,7 @@ Create a menu in Appearance > Menus and assign it to the "Sidebar Menu" display 
 ## Screenshots
 
 <img src="assets-repo/screenshot-1.jpg" width="700px" alt="Home page, dark scheme" />
-<img src="assets-repo/screenshot-2.jpg" width="700px" alt="Home page, light scheme" />
-<img src="assets-repo/screenshot-3.jpg" width="700px" alt="Single page, dark scheme" />
-<img src="assets-repo/screenshot-4.jpg" width="700px" alt="Single page, light scheme" />
-<img src="assets-repo/screenshot-5.jpg" width="700px" alt="Search results modal" />
+<img src="assets-repo/screenshot-2.jpg" width="700px" alt="Single page, light scheme" />
+<img src="assets-repo/screenshot-3.png" width="700px" alt="Responsive layout" />
+<img src="assets-repo/screenshot-4.jpg" width="700px" alt="Search results" />
+<img src="assets-repo/screenshot-5.jpg" width="700px" alt="Next page link" />
