@@ -27,7 +27,8 @@ export default {
 					"src/**",
 					"jest.*",
 					"*config.js",
-					"*config.json"
+					"*config.json",
+					"types.d.ts"
 				]
 			}
 		])
