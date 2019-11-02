@@ -40,7 +40,7 @@ export const SearchResults: React.ComponentType<Props> = props => {
 
 	return (
 		<DivRef ref={search_ref} id="search-results">
-			<SimpleBar style={{ height }} data-simplebar-auto-hide={false}>
+			<SimpleBar style={{ height }} autoHide={false}>
 				{!!results.length ? (
 					results.map(result => <SearchResult key={result.id} {...result} />)
 				) : (

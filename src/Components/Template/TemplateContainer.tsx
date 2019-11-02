@@ -15,7 +15,7 @@ export const TemplateContainer: React.ComponentType<Props> = props => {
 	const { window_height } = useWindowSize();
 	const [height, setHeight] = useState(window_height);
 	const template_ref = useRef<HTMLDivElement | null>(null);
-	const simplebar_ref = useRef<HTMLDivElement | null>(null);
+	const simplebar_ref = useRef<Object | null>(null);
 
 	// When the page finishes loading new content scroll to the top.
 	useEffect(() => {
@@ -23,19 +23,8 @@ export const TemplateContainer: React.ComponentType<Props> = props => {
 			return;
 		}
 
-		simplebar_ref.current.scrollTop = 0;
+		simplebar_ref.current.getScrollElement().scrollTop = 0;
 	}, [is_loading]);
-
-	// In the second render, when SimpleBar is loaded, set its ref.
-	useEffect(() => {
-		if (!is_ready || !template_ref.current) {
-			return;
-		}
-
-		simplebar_ref.current = template_ref.current.querySelector(
-			".simplebar-content-wrapper"
-		);
-	}, [is_ready]);
 
 	// When the page resizes update the height state.
 	useEffect(() => {
@@ -53,7 +42,7 @@ export const TemplateContainer: React.ComponentType<Props> = props => {
 
 	return (
 		<MainRef id="content" ref={template_ref}>
-			<SimpleBar style={{ height }} data-simplebar-auto-hide={false}>
+			<SimpleBar ref={simplebar_ref} style={{ height }} autoHide={false}>
 				{children}
 			</SimpleBar>
 		</MainRef>

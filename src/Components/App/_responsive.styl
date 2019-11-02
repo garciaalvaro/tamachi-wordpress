@@ -9,10 +9,16 @@ body
 		#tamachi-sidebar
 			flex-basis $sidebar_width_resp
 
+		#tamachi-content
+			max-width "calc(100vw - %s)" % $sidebar_width_resp
+
 		#tamachi-post-content .alignfull
 			width "calc(100vw - %s)" % $sidebar_width_resp
 
 	@media screen and (max-width: 768px)
+
+		#tamachi-content
+			max-width 100%
 
 		#tamachi-post-content .alignfull
 			width 100vw
