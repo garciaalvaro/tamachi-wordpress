@@ -51,7 +51,7 @@ export const Sidebar: React.ComponentType = props => {
 			ref={sidebar_ref}
 			className={sidebar_is_hidden ? "is_open" : null}
 		>
-			<SimpleBar style={{ height }} data-simplebar-auto-hide={false}>
+			<SimpleBar style={{ height }} autoHide={false}>
 				{sidebar_is_hidden && <ButtonSidebar />}
 				<ButtonColor />
 				<ButtonSearch />
