@@ -33,12 +33,17 @@ export const Sidebar: React.ComponentType = props => {
 	}, [window_height, layout, sidebar_is_open]);
 
 	if (!is_ready || !menu.length) {
-		return <Nav id="sidebar"></Nav>;
+		return (
+			<Nav
+				id="sidebar"
+				className={sidebar_is_open ? "is_open" : "no-is_open"}
+			></Nav>
+		);
 	}
 
 	if (sidebar_is_hidden && !sidebar_is_open) {
 		return (
-			<Nav id="sidebar" className="no-is_open">
+			<Nav id="sidebar" className={sidebar_is_open ? "is_open" : "no-is_open"}>
 				<ButtonSidebar />
 				<ButtonColor />
 			</Nav>
@@ -49,7 +54,7 @@ export const Sidebar: React.ComponentType = props => {
 		<NavRef
 			id="sidebar"
 			ref={sidebar_ref}
-			className={sidebar_is_hidden ? "is_open" : null}
+			className={sidebar_is_open ? "is_open" : "no-is_open"}
 		>
 			<SimpleBar style={{ height }} autoHide={false}>
 				{sidebar_is_hidden && <ButtonSidebar />}

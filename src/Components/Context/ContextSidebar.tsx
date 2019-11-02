@@ -6,7 +6,7 @@ interface ProviderProps {
 }
 
 interface ContextProps {
-	sidebar_is_hidden: boolean;
+	sidebar_is_hidden: boolean; // sidebar is hidden behind a toggle button
 	setSidebarIsHidden: Function;
 	sidebar_is_open: boolean;
 	setSidebarIsOpen: Function;
