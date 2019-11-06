@@ -8,12 +8,6 @@ WordPress theme used for the documentation of melonpan themes and plugins.
 
 <br />
 
-## Notes
-
-This theme is currently in beta stage. This means that although it works (as can be seen in the [demo page](https://melonpan.io)) its code base could change.
-
-<br />
-
 ## Features
 
 - Built in **TypeScript with React**, using hooks and the Context API.
