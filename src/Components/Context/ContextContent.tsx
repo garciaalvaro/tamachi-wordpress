@@ -56,7 +56,8 @@ export const ContextContentProvider: React.ComponentType<
 				setTitle,
 				content,
 				// Sanitize the given HTML string, as it will be used raw.
-				setContent: (content: string) => setContent(DOMPurify.sanitize(content))
+				setContent: (content: string) =>
+					setContent(DOMPurify.sanitize(content, { ADD_ATTR: ["target"] }))
 			}}
 		>
 			{props.children}
