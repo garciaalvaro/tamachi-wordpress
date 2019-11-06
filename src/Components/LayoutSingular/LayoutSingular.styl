@@ -2,6 +2,8 @@
  * Layout Singular
  */
 
+@import "./_mbcode-fixes"
+
 +prefix-classes('tamachi-')
 
 	#tamachi-post-header
@@ -28,6 +30,9 @@
 	#tamachi-navigation-next
 		margin-top auto
 
+	.border-015 img
+		border 1px solid var(--color_015)
+
 	.layout-singular
 
 		#tamachi-post
@@ -36,6 +41,16 @@
 			min-height 100vh
 			display flex
 			flex-direction column
+
+		.figure-max_width-300 figure
+			max-width 300px
+			margin-left auto
+			margin-right auto
+
+		.figure-max_width-250 figure
+			max-width 250px
+			margin-left auto
+			margin-right auto
 
 #tamachi-post-content
 	border-top .2rem solid
@@ -64,10 +79,6 @@
 
 	figure img
 		display block
-
-	.wp-block-image
-	.mbi-slider-images img
-		border .1rem solid var(--color_02)
 
 	li code
 		background-color var(--color_01)
@@ -117,6 +128,7 @@
 	> h4
 	> h5
 	> h6
+	> .wp-block-melonpan-block-images + .wp-block-melonpan-block-images
 		margin-top 2*$paragraph_margint
 
 	.alignfull
