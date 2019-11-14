@@ -9,16 +9,18 @@ body
 		#tamachi-sidebar
 			flex-basis $sidebar_width_resp
 
-		#tamachi-content
-			max-width "calc(100vw - %s)" % $sidebar_width_resp
-
 		#tamachi-post-content .alignfull
 			width "calc(100vw - %s)" % $sidebar_width_resp
 
-	@media screen and (max-width: 768px)
+		+prefix-classes('tamachi-')
 
-		#tamachi-content
-			max-width 100%
+			.layout-singular
+			.layout-archive
+
+				#tamachi-content
+					max-width "calc(100vw - %s)" % $sidebar_width_resp
+
+	@media screen and (max-width: 768px)
 
 		#tamachi-post-content .alignfull
 			width 100vw
@@ -38,6 +40,12 @@ body
 					margin-bottom 0
 
 		+prefix-classes('tamachi-')
+
+			.layout-singular
+			.layout-archive
+
+				#tamachi-content
+					max-width 100%
 
 			#tamachi-search-results
 				max-width 100vw
