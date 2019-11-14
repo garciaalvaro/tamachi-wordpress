@@ -3,7 +3,7 @@
 namespace TAMACHI;
 
 if ( ! defined( __NAMESPACE__ . '\THEME_VERSION' ) ) {
-	define( __NAMESPACE__ . '\THEME_VERSION', '1.0.0' );
+	define( __NAMESPACE__ . '\THEME_VERSION', '1.0.1' );
 }
 if ( ! defined( __NAMESPACE__ . '\THEME_NAME' ) ) {
 	define( __NAMESPACE__ . '\THEME_NAME', 'tamachi' );
