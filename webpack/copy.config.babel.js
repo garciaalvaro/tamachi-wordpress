@@ -28,7 +28,8 @@ export default {
 					"jest.*",
 					"*config.js",
 					"*config.json",
-					"types.d.ts"
+					"types.d.ts",
+					"webpack/**"
 				]
 			}
 		])
