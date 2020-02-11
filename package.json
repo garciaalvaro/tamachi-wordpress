@@ -11,7 +11,8 @@
 		"version": "webpack --mode production --config ./webpack/version.config.babel.js && rm _temp.js",
 		"pragma": "webpack --mode production --config ./webpack/pragma.config.babel.js && rm _release/_temp.js",
 		"clean": "rm -rf build _release",
-		"prebuild": "tsc && npm run clean && npm run version",
+		"type-check": "tsc",
+		"prebuild": "npm run type-check && npm run clean && npm run version",
 		"build": "webpack --mode production --config ./webpack/build.config.babel.js",
 		"postbuild": "npm run copy && npm run pragma"
 	},
