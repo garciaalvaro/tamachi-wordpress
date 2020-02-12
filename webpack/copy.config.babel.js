@@ -18,7 +18,7 @@ export default {
 					"types/**",
 					"_temp.js",
 					"_release/**",
-					"assets-repo/**",
+					"docs/**",
 					"node_modules/**",
 					"package.json",
 					"package-lock.json",

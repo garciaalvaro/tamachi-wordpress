@@ -32,8 +32,8 @@ Create a menu in _Appearance > Menus_ and assign it to the _Sidebar Menu_ displa
 
 ## Screenshots
 
-<img src="assets-repo/screenshot-1.jpg" width="700px" alt="Home page, dark scheme" />
-<img src="assets-repo/screenshot-2.jpg" width="700px" alt="Single page, light scheme" />
-<img src="assets-repo/screenshot-3.png" width="700px" alt="Responsive layout" />
-<img src="assets-repo/screenshot-4.jpg" width="700px" alt="Search results" />
-<img src="assets-repo/screenshot-5.jpg" width="700px" alt="Next page link" />
+<img src="docs/screenshot-1.jpg" width="700px" alt="Home page, dark scheme" />
+<img src="docs/screenshot-2.jpg" width="700px" alt="Single page, light scheme" />
+<img src="docs/screenshot-3.png" width="700px" alt="Responsive layout" />
+<img src="docs/screenshot-4.jpg" width="700px" alt="Search results" />
+<img src="docs/screenshot-5.jpg" width="700px" alt="Next page link" />
