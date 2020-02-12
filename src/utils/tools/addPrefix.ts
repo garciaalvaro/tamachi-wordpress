@@ -16,7 +16,7 @@ const resolvePrefix = (
 
 export const addPrefix = (
 	elements: string | null | (string | null)[] | undefined,
-	separator: string = "-",
+	separator = "-",
 	prefix = theme_prefix
 ): string => {
 	if (!elements) {

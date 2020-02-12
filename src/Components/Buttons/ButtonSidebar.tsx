@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Button, Icon } from "utils/Components";
 import { ContextSidebar } from "../Context/ContextSidebar";
 
-export const ButtonSidebar: React.ComponentType = props => {
+export const ButtonSidebar: React.ComponentType = () => {
 	const { sidebar_is_open, setSidebarIsOpen } = useContext(ContextSidebar);
 
 	return (

@@ -14,7 +14,7 @@ import { Template } from "../Template/Template";
 import { Sidebar } from "../Sidebar/Sidebar";
 import { ContextView } from "../Context/ContextView";
 
-export const App: React.ComponentType = props => {
+export const App: React.ComponentType = () => {
 	const { setIsReady } = useContext(ContextView);
 
 	useFetchMenu();

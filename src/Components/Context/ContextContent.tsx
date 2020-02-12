@@ -43,9 +43,7 @@ const getContent = () => {
 	return content.innerHTML;
 };
 
-export const ContextContentProvider: React.ComponentType<
-	ProviderProps
-> = props => {
+export const ContextContentProvider: React.ComponentType<ProviderProps> = props => {
 	const [title, setTitle] = useState(getTitle());
 	const [content, setContent] = useState(getContent());
 
@@ -57,7 +55,9 @@ export const ContextContentProvider: React.ComponentType<
 				content,
 				// Sanitize the given HTML string, as it will be used raw.
 				setContent: (content: string) =>
-					setContent(DOMPurify.sanitize(content, { ADD_ATTR: ["target"] }))
+					setContent(
+						DOMPurify.sanitize(content, { ADD_ATTR: ["target"] })
+					)
 			}}
 		>
 			{props.children}

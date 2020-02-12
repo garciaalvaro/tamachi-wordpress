@@ -14,10 +14,8 @@ export const SearchResult: React.ComponentType<SearchResult> = props => {
 		<A
 			className="post"
 			href={url}
-			onClick={(e: any) => {
-				if (e.shiftKey || e.ctrlKey || e.metaKey) {
-					return;
-				}
+			onClick={(e: React.MouseEvent) => {
+				if (e.shiftKey || e.ctrlKey || e.metaKey) return;
 
 				e.preventDefault();
 

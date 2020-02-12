@@ -8,7 +8,7 @@ import { preparePaginationUrl } from "utils/tools";
 import { ContextView } from "../Context/ContextView";
 import { NavigationPaginationItem } from "./NavigationPaginationItem";
 
-export const NavigationPagination: React.ComponentType = props => {
+export const NavigationPagination: React.ComponentType = () => {
 	const { template_data } = useContext(ContextView);
 	const { pages_total, page_current } = template_data;
 	// We use an object that stores all the page objects
@@ -34,9 +34,7 @@ export const NavigationPagination: React.ComponentType = props => {
 
 	// Update the visible pages once the pages object has been filled.
 	useEffect(() => {
-		if (!pages.length) {
-			return;
-		}
+		if (!pages.length) return;
 
 		const offset = 3;
 		const start = Math.max(0, page_current - offset);
@@ -50,6 +48,7 @@ export const NavigationPagination: React.ComponentType = props => {
 		if (!pages.length || !pages_visible.length) {
 			setFirstPage(null);
 			setLastPage(null);
+
 			return;
 		}
 
@@ -72,7 +71,10 @@ export const NavigationPagination: React.ComponentType = props => {
 			<Span id="navigation-pagination-label">{__("Page")}</Span>
 			<Div id="navigation-pagination-links">
 				{first_page && (
-					<NavigationPaginationItem {...pages[first_page - 1]} is_first />
+					<NavigationPaginationItem
+						{...pages[first_page - 1]}
+						is_first={true}
+					/>
 				)}
 				{pages_visible.map(item => (
 					<NavigationPaginationItem
@@ -82,7 +84,10 @@ export const NavigationPagination: React.ComponentType = props => {
 					/>
 				))}
 				{last_page && (
-					<NavigationPaginationItem {...pages[last_page - 1]} is_last />
+					<NavigationPaginationItem
+						{...pages[last_page - 1]}
+						is_last={true}
+					/>
 				)}
 			</Div>
 		</Div>

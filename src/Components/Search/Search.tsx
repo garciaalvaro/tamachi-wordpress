@@ -9,7 +9,7 @@ import { SearchField } from "./SearchField";
 import { SearchResults } from "./SearchResults";
 import { ButtonSearch } from "../Buttons/ButtonSearch";
 
-export const Search: React.ComponentType = props => {
+export const Search: React.ComponentType = () => {
 	// We use a counter to keep track of the fetch order.
 	const counter = useRef(0);
 	const [query, setQuery] = useState("");
@@ -20,18 +20,14 @@ export const Search: React.ComponentType = props => {
 	// Set a timer that keeps tracks of when the user is writing.
 	// This way we only fetch data when the user is no longer writing.
 	useEffect(() => {
-		if (query.length < 3) {
-			return;
-		}
+		if (query.length < 3) return;
 
 		setWriting(true);
 
 		const timer = setTimeout(() => setWriting(false), 1500);
 
 		return () => {
-			if (!timer) {
-				return;
-			}
+			if (!timer) return;
 
 			clearTimeout(timer);
 		};
@@ -39,9 +35,7 @@ export const Search: React.ComponentType = props => {
 
 	// Fetch the search results.
 	useEffect(() => {
-		if (writing || query.length < 3) {
-			return;
-		}
+		if (writing || query.length < 3) return;
 
 		// Update the counter.
 		counter.current = counter.current + 1;
@@ -95,7 +89,10 @@ export const Search: React.ComponentType = props => {
 	return (
 		<Div
 			id="search"
-			className={[writing ? "writing" : null, fetching ? "fetching" : null]}
+			className={[
+				writing ? "writing" : null,
+				fetching ? "fetching" : null
+			]}
 		>
 			<ButtonSearch />
 			<SearchField query={query} setQuery={setQuery} />

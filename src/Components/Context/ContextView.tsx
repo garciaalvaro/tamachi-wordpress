@@ -3,6 +3,12 @@ import { noop } from "lodash";
 
 import { preparePageData } from "utils/tools";
 
+declare global {
+	interface Window {
+		tamachi_page_data: PageData;
+	}
+}
+
 interface ProviderProps {
 	children: React.ReactElement;
 }
@@ -22,7 +28,7 @@ interface ContextProps {
 	setLayout: Function;
 }
 
-const page_data = preparePageData((window as any).tamachi_page_data);
+const page_data = preparePageData(window.tamachi_page_data);
 const {
 	template: initial_template,
 	template_data: initial_template_data,
@@ -44,9 +50,7 @@ export const ContextView = createContext<ContextProps>({
 	setLayout: noop
 });
 
-export const ContextViewProvider: React.ComponentType<
-	ProviderProps
-> = props => {
+export const ContextViewProvider: React.ComponentType<ProviderProps> = props => {
 	const [template, setTemplate] = useState<Template>(initial_template);
 	const [template_data, setTemplateData] = useState<TemplateData>(
 		initial_template_data

@@ -18,15 +18,15 @@ export const MenuItemLink: React.ComponentType<Props> = props => {
 		<A
 			className="menu-item"
 			href={url}
-			onClick={(e: any) => {
-				if (e.shiftKey || e.ctrlKey || e.metaKey) {
-					return;
-				}
+			onClick={(e: React.MouseEvent) => {
+				if (e.shiftKey || e.ctrlKey || e.metaKey) return;
 
 				e.preventDefault();
 
 				if (is_active) {
-					setMenu((menu: Menu) => prepareMenuItemsVisibility(menu, id));
+					setMenu((menu: Menu) =>
+						prepareMenuItemsVisibility(menu, id)
+					);
 				} else {
 					loadPage(url, true);
 				}

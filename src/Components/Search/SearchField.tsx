@@ -15,9 +15,7 @@ export const SearchField: React.ComponentType<Props> = props => {
 
 	// Focus the input on mount.
 	useEffect(() => {
-		if (!input_ref.current) {
-			return;
-		}
+		if (!input_ref.current) return;
 
 		input_ref.current.focus();
 	}, []);
@@ -33,7 +31,7 @@ export const SearchField: React.ComponentType<Props> = props => {
 				id="search-input"
 				type="text"
 				value={query}
-				onChange={(e: any) => {
+				onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 					const query = e.target.value;
 
 					setQuery(query);

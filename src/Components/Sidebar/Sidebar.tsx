@@ -12,24 +12,29 @@ import { Menu } from "../Menu/Menu";
 import { Search } from "../Search/Search";
 import { ButtonSidebar } from "../Buttons/ButtonSidebar";
 
-export const Sidebar: React.ComponentType = props => {
+interface SimpleBarProps extends SimpleBar {
+	getScrollElement: Function;
+	clientHeight: number;
+}
+
+export const Sidebar: React.ComponentType = () => {
 	const {
 		search_is_open,
 		sidebar_is_open,
 		sidebar_is_hidden,
 		menu
 	} = useContext(ContextSidebar);
-	const sidebar_ref = useRef<HTMLDivElement | null>(null);
+
+	const nav_ref = useRef<HTMLDivElement | null>(null);
+	const simplebar_ref = useRef<SimpleBarProps | null>(null);
 	const { window_height } = useWindowSize();
 	const [height, setHeight] = useState(window_height);
 	const { layout, is_ready } = useContext(ContextView);
 
 	useEffect(() => {
-		if (!sidebar_ref.current) {
-			return;
-		}
+		if (!simplebar_ref.current) return;
 
-		setHeight(sidebar_ref.current.clientHeight);
+		setHeight(simplebar_ref.current.clientHeight);
 	}, [window_height, layout, sidebar_is_open]);
 
 	if (!is_ready || !menu.length) {
@@ -43,7 +48,10 @@ export const Sidebar: React.ComponentType = props => {
 
 	if (sidebar_is_hidden && !sidebar_is_open) {
 		return (
-			<Nav id="sidebar" className={sidebar_is_open ? "is_open" : "no-is_open"}>
+			<Nav
+				id="sidebar"
+				className={sidebar_is_open ? "is_open" : "no-is_open"}
+			>
 				<ButtonSidebar />
 				<ButtonColor />
 			</Nav>
@@ -53,10 +61,14 @@ export const Sidebar: React.ComponentType = props => {
 	return (
 		<NavRef
 			id="sidebar"
-			ref={sidebar_ref}
+			ref={nav_ref}
 			className={sidebar_is_open ? "is_open" : "no-is_open"}
 		>
-			<SimpleBar style={{ height }} autoHide={false}>
+			<SimpleBar
+				ref={simplebar_ref}
+				style={{ height }}
+				options={{ autoHide: false }}
+			>
 				{sidebar_is_hidden && <ButtonSidebar />}
 				<ButtonColor />
 				<ButtonSearch />

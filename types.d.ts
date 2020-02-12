@@ -5,26 +5,29 @@ declare const l: Function;
 // explicitly importing react in every file we need to declare it.
 declare const React: typeof import("react");
 
-// simplebar-react
-declare module "simplebar-react";
-
-interface Object {
-	[key: string]: any;
+interface ComponentProps {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	[prop: string]: any;
+	id?: string | null;
+	className?: string | null | (string | null)[] | undefined;
+	children?: import("react").ReactNode;
 }
 
 type Color = "light" | "dark";
 
-interface PageData {
+type PageData = {
 	template: Template;
 	template_data: TemplateData;
 	layout: Layout;
-}
+};
 
-interface PageDataRaw {
+type PageDataRaw = {
 	template: Template;
 	template_data: Partial<TemplateData>;
 	layout: Layout;
-}
+};
+
+type Layout = "home" | "singular" | "archive";
 
 type Template =
 	| "home"
@@ -37,15 +40,7 @@ type Template =
 	| "singular"
 	| "error404";
 
-interface ComponentProps extends Object {
-	children?: React.ReactNode;
-	id?: string | null;
-	className?: string | null | (string | null)[] | undefined;
-}
-
-type Layout = "home" | "singular" | "archive";
-
-interface TemplateData {
+type TemplateData = {
 	next: { title: string; url: string } | null;
 	post_id: number;
 	post_type: string;
@@ -56,36 +51,36 @@ interface TemplateData {
 	items: Item[];
 	page_current: number;
 	pages_total: number;
-}
+};
 
-interface TemplateDataRaw extends Partial<TemplateData> {}
+type TemplateDataRaw = Partial<TemplateData>;
 
-interface SearchResultRaw {
+type SearchResultRaw = {
 	id: number;
 	title: string;
 	url: string;
 	content: string;
 	ancestors: Item[];
-}
+};
 
-interface SearchResult {
+type SearchResult = {
 	id: number;
 	url: string;
 	title_raw: string;
 	title: { before: string; after: string; result: string }[];
 	content: { before: string; after: string; result: string }[];
 	ancestors: Item[];
-}
+};
 
 type Menu = MenuItem[];
 
-interface Item {
+type Item = {
 	id: number | string;
 	title: string;
 	url: string;
-}
+};
 
-interface MenuItem {
+type MenuItem = {
 	id: number;
 	title: string;
 	ancestor_is_closed: boolean;
@@ -95,67 +90,52 @@ interface MenuItem {
 	url: string;
 	ancestors_id: number[];
 	post_id: number;
-}
+};
 
-interface MenuItemRaw {
+type MenuItemRaw = {
 	ID: number;
 	title: string;
 	menu_item_parent: string;
 	type: string;
 	url: string;
 	object_id: string;
-}
+};
 
 type MenuRaw = MenuItemRaw[];
 
-interface Script {
+type ScriptRaw = {
 	deps: string[];
+	src: string;
+	is_reexecutable: boolean;
+	id: string;
+};
+
+type Script = ScriptRaw & {
 	deps_loaded: string[];
-	src: string;
-	is_reexecutable: boolean;
 	is_loaded: boolean;
 	is_loading: boolean;
-	id: string;
-}
+};
 
-interface ScriptRaw {
+type Scripts = Record<string, Script>;
+
+type ScriptsRaw = Record<string, ScriptRaw>;
+
+type StyleRaw = {
 	deps: string[];
 	src: string;
-	is_reexecutable: boolean;
 	id: string;
-}
+};
 
-interface Scripts {
-	[id: string]: Script;
-}
-
-interface ScriptsRaw {
-	[id: string]: ScriptRaw;
-}
-
-interface Style {
-	deps: string[];
-	src: string;
+type Style = StyleRaw & {
 	is_loaded: boolean;
 	is_loading: boolean;
-	id: string;
-}
+};
 
-interface StyleRaw {
-	deps: string[];
-	src: string;
-	id: string;
-}
+type Styles = Record<string, Style>;
 
-interface Styles {
-	[id: string]: Style;
-}
+type StylesRaw = Record<string, StyleRaw>;
 
-interface StylesRaw {
-	[id: string]: StyleRaw;
-}
-
-interface PaginationItem {
+type PaginationItem = {
 	number: number;
 	url: string;
-}
+};

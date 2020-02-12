@@ -11,10 +11,10 @@ export const useHandleUrlChanges = () => {
 	const { menu, setMenu, setSidebarIsOpen } = useContext(ContextSidebar);
 
 	// Listen to url changes made by the browser and load the url.
-	const popstateCallback = (e: any) => {
-		const url = e.currentTarget.location.href;
+	const popstateCallback = () => {
+		const new_url = location.href;
 
-		loadPage(url);
+		loadPage(new_url);
 	};
 
 	// Add the event listener.
@@ -26,9 +26,7 @@ export const useHandleUrlChanges = () => {
 
 	// If the url changes we need to update the menu is_open is_active items.
 	useEffect(() => {
-		if (!menu.length) {
-			return;
-		}
+		if (!menu.length) return;
 
 		setMenu((menu: Menu) => prepareMenuItemsVisibility(menu));
 		setSidebarIsOpen(false);

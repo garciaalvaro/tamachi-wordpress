@@ -7,18 +7,21 @@ import { ContextScripts } from "Components/Context/ContextScripts";
 export const useAddStyles = () => {
 	const { setStyles } = useContext(ContextScripts);
 
-	const addStyles = (styles_new: Styles, belongs_to_entry_page = false) =>
+	const addStyles = (styles_new: StylesRaw, belongs_to_entry_page = false) =>
 		setStyles((styles: Styles) =>
 			produce(styles, draft_styles => {
-				forOwn(styles_new, style => {
-					const style_old = draft_styles[style.id];
+				forOwn(styles_new, style_raw => {
+					const style_old = draft_styles[style_raw.id];
 
-					if (style_old) {
-						return;
-					}
+					if (style_old) return;
 
-					draft_styles[style.id] = {
-						...style,
+					const { id, deps, src } = style_raw;
+
+					draft_styles[id] = {
+						id,
+						deps,
+						src,
+						is_loading: true,
 						is_loaded: belongs_to_entry_page
 					};
 				});

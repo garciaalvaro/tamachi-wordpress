@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Button, Icon } from "utils/Components";
 import { ContextSidebar } from "../Context/ContextSidebar";
 
-export const ButtonSearch: React.ComponentType = props => {
+export const ButtonSearch: React.ComponentType = () => {
 	const { setSearchIsOpen, search_is_open } = useContext(ContextSidebar);
 
 	return (

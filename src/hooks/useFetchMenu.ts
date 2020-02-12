@@ -17,9 +17,7 @@ export const useFetchMenu = () => {
 				})
 			});
 
-			if (!menu) {
-				return;
-			}
+			if (!menu) return;
 
 			setMenu(prepareMenu(menu));
 		};

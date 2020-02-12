@@ -24,7 +24,8 @@ export const useAddScripts = () => {
 			produce(scripts_old, draft_scripts_old => {
 				// Loop the new scripts.
 				forOwn(scripts_new, script_new => {
-					let { id, deps, is_reexecutable } = script_new;
+					const { id, is_reexecutable } = script_new;
+					let { deps } = script_new;
 					let is_loaded = entry_page_script_ids.includes(id);
 					let is_loading = false;
 					const script_old = draft_scripts_old[id];

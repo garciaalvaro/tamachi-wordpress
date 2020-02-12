@@ -3,7 +3,7 @@ import { useState } from "react";
 import { getColorScheme } from "utils/tools";
 import { Button, Icon } from "utils/Components";
 
-export const ButtonColor: React.ComponentType = props => {
+export const ButtonColor: React.ComponentType = () => {
 	const [color, setColor] = useState<Color>(getColorScheme());
 
 	return (
