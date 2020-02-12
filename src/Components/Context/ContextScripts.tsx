@@ -19,9 +19,7 @@ export const ContextScripts = createContext<ContextProps>({
 	setStyles: noop
 });
 
-export const ContextScriptsProvider: React.ComponentType<
-	ProviderProps
-> = props => {
+export const ContextScriptsProvider: React.ComponentType<ProviderProps> = props => {
 	const [scripts, setScripts] = useState<Scripts>({});
 	const [styles, setStyles] = useState<Styles>({});
 

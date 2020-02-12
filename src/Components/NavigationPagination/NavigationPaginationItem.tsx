@@ -5,8 +5,8 @@ import { useLoadPage } from "hooks";
 
 interface Props extends PaginationItem {
 	is_active?: boolean;
-	is_first?: any;
-	is_last?: any;
+	is_first?: true;
+	is_last?: true;
 }
 
 export const NavigationPaginationItem: React.ComponentType<Props> = props => {
@@ -22,10 +22,8 @@ export const NavigationPaginationItem: React.ComponentType<Props> = props => {
 				is_last ? "is_last" : null
 			]}
 			href={url}
-			onClick={(e: any) => {
-				if (e.shiftKey || e.ctrlKey || e.metaKey) {
-					return;
-				}
+			onClick={(e: React.MouseEvent) => {
+				if (e.shiftKey || e.ctrlKey || e.metaKey) return;
 
 				e.preventDefault();
 

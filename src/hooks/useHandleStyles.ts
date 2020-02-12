@@ -13,42 +13,22 @@ export const useHandleStyles = () => {
 			produce(styles, draft_styles => {
 				const style = draft_styles[id];
 
-				if (!style) {
-					return;
-				}
+				if (!style) return;
 
-				style.is_loading = false;
 				style.is_loaded = true;
-			})
-		);
-
-	const updateLoadingStyle = (id: Style["id"]) =>
-		setStyles((styles: Styles) =>
-			produce(styles, draft_styles => {
-				const style = draft_styles[id];
-
-				if (!style) {
-					return;
-				}
-
-				style.is_loading = true;
 			})
 		);
 
 	useEffect(() => {
 		forOwn(styles, style => {
-			const { id, src, is_loaded, is_loading } = style;
+			const { id, src, is_loaded } = style;
 
-			if (is_loading || is_loaded) {
-				return;
-			}
+			if (is_loaded) return;
 
 			// Update loaded style props
 			if (!src) {
 				updateLoadedStyle(id);
 			} else {
-				updateLoadingStyle(id);
-
 				// Load style in the page
 				appendStyleInDocument(src)
 					// Update loaded style props

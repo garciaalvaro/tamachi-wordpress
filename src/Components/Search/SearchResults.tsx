@@ -8,8 +8,8 @@ import { SearchResult } from "./SearchResult";
 
 interface Props {
 	results: SearchResult[];
-	writing: Boolean;
-	fetching: Boolean;
+	writing: boolean;
+	fetching: boolean;
 }
 
 export const SearchResults: React.ComponentType<Props> = props => {
@@ -20,32 +20,38 @@ export const SearchResults: React.ComponentType<Props> = props => {
 
 	// When the displayed message or the results change we need to update SimpleBars height.
 	useEffect(() => {
-		if (!search_ref.current) {
-			return;
-		}
+		if (!search_ref.current) return;
 
 		const simplebar_content = search_ref.current.querySelector(
 			".simplebar-content"
 		);
+
 		const height = simplebar_content ? simplebar_content.clientHeight : 0;
 
 		// Set a maximum and a minimum height.
 		setHeight(
 			Math.max(
 				85,
-				Math.min(window_height - /* top */ 140 - /* bottom */ 30, height)
+				Math.min(
+					window_height - /* top */ 140 - /* bottom */ 30,
+					height
+				)
 			)
 		);
 	}, [writing, results.map(({ id }) => id).join("")]);
 
 	return (
 		<DivRef ref={search_ref} id="search-results">
-			<SimpleBar style={{ height }} autoHide={false}>
+			<SimpleBar style={{ height }} options={{ autoHide: false }}>
 				{!!results.length ? (
-					results.map(result => <SearchResult key={result.id} {...result} />)
+					results.map(result => (
+						<SearchResult key={result.id} {...result} />
+					))
 				) : (
 					<Span className="search-info">
-						{writing || fetching ? __("Searching...") : __("No results.")}
+						{writing || fetching
+							? __("Searching...")
+							: __("No results.")}
 					</Span>
 				)}
 			</SimpleBar>

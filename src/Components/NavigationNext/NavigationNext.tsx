@@ -6,7 +6,7 @@ import { Div, Span, A } from "utils/Components";
 import { useLoadPage } from "hooks";
 import { ContextView } from "../Context/ContextView";
 
-export const NavigationNext: React.ComponentType = props => {
+export const NavigationNext: React.ComponentType = () => {
 	const { template_data } = useContext(ContextView);
 	const loadPage = useLoadPage();
 
@@ -22,10 +22,8 @@ export const NavigationNext: React.ComponentType = props => {
 			<A
 				id="navigation-next-link"
 				href={url}
-				onClick={(e: any) => {
-					if (e.shiftKey || e.ctrlKey || e.metaKey) {
-						return;
-					}
+				onClick={(e: React.MouseEvent) => {
+					if (e.shiftKey || e.ctrlKey || e.metaKey) return;
 
 					e.preventDefault();
 

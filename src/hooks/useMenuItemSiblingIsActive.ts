@@ -12,7 +12,10 @@ export const useMenuItemSiblingIsActive = (
 	const item_active_id = item_active ? item_active.id : 0;
 
 	useEffect(() => {
-		if (!item_active || last(item_active.ancestors_id) !== last(ancestors_id)) {
+		if (
+			!item_active ||
+			last(item_active.ancestors_id) !== last(ancestors_id)
+		) {
 			setIsActive(false);
 		} else {
 			setIsActive(true);

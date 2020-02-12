@@ -13,17 +13,13 @@ export const useHandleScripts = () => {
 			produce(scripts, draft_scripts => {
 				const script = draft_scripts[id];
 
-				if (!script) {
-					return;
-				}
+				if (!script) return;
 
 				script.is_loading = false;
 				script.is_loaded = true;
 
 				forOwn(draft_scripts, script => {
-					if (!script.deps.includes(id)) {
-						return;
-					}
+					if (!script.deps.includes(id)) return;
 
 					script.deps_loaded.push(id);
 				});
@@ -35,9 +31,7 @@ export const useHandleScripts = () => {
 			produce(scripts, draft_scripts => {
 				const script = draft_scripts[id];
 
-				if (!script) {
-					return;
-				}
+				if (!script) return;
 
 				script.is_loading = true;
 			})
@@ -45,11 +39,17 @@ export const useHandleScripts = () => {
 
 	useEffect(() => {
 		forOwn(scripts, script => {
-			const { id, src, is_loaded, is_loading, deps, deps_loaded } = script;
+			const {
+				id,
+				src,
+				is_loaded,
+				is_loading,
+				deps,
+				deps_loaded
+			} = script;
 
-			if (is_loading || is_loaded || deps_loaded.length !== deps.length) {
+			if (is_loading || is_loaded || deps_loaded.length !== deps.length)
 				return;
-			}
 
 			// Update loaded script props
 			if (!src) {

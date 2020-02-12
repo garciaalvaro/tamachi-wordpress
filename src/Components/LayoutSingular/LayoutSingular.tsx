@@ -7,7 +7,7 @@ import { LayoutContent } from "../LayoutContent/LayoutContent";
 import { NavigationNext } from "../NavigationNext/NavigationNext";
 import { ContextView } from "../Context/ContextView";
 
-export const LayoutSingular: React.ComponentType = props => {
+export const LayoutSingular: React.ComponentType = () => {
 	const { template_data } = useContext(ContextView);
 	const { ancestors } = template_data;
 

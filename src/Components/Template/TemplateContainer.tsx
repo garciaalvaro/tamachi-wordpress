@@ -5,32 +5,29 @@ import { useWindowSize } from "utils/hooks";
 import { Main, MainRef } from "utils/Components";
 import { ContextView } from "../Context/ContextView";
 
-interface Props {
-	children: React.ReactNode;
+interface SimpleBarProps extends SimpleBar {
+	getScrollElement: Function;
+	clientHeight: number;
 }
 
-export const TemplateContainer: React.ComponentType<Props> = props => {
+export const TemplateContainer: React.ComponentType = props => {
 	const { children } = props;
 	const { is_loading, is_ready } = useContext(ContextView);
 	const { window_height } = useWindowSize();
 	const [height, setHeight] = useState(window_height);
 	const template_ref = useRef<HTMLDivElement | null>(null);
-	const simplebar_ref = useRef<Object | null>(null);
+	const simplebar_ref = useRef<SimpleBarProps | null>(null);
 
 	// When the page finishes loading new content scroll to the top.
 	useEffect(() => {
-		if (is_loading || !simplebar_ref.current) {
-			return;
-		}
+		if (is_loading || !simplebar_ref.current?.getScrollElement) return;
 
 		simplebar_ref.current.getScrollElement().scrollTop = 0;
 	}, [is_loading]);
 
 	// When the page resizes update the height state.
 	useEffect(() => {
-		if (!template_ref.current) {
-			return;
-		}
+		if (!template_ref.current) return;
 
 		setHeight(template_ref.current.clientHeight);
 	}, [window_height]);
@@ -42,7 +39,11 @@ export const TemplateContainer: React.ComponentType<Props> = props => {
 
 	return (
 		<MainRef id="content" ref={template_ref}>
-			<SimpleBar ref={simplebar_ref} style={{ height }} autoHide={false}>
+			<SimpleBar
+				ref={simplebar_ref}
+				style={{ height }}
+				options={{ autoHide: false }}
+			>
 				{children}
 			</SimpleBar>
 		</MainRef>

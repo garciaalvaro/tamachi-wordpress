@@ -32,11 +32,11 @@ export const ContextSidebar = createContext<ContextProps>({
 	setMenu: noop
 });
 
-export const ContextSidebarProvider: React.ComponentType<
-	ProviderProps
-> = props => {
+export const ContextSidebarProvider: React.ComponentType<ProviderProps> = props => {
 	const [menu, setMenu] = useState([]);
-	const [sidebar_is_hidden, setSidebarIsHidden] = useState(window_width < 769);
+	const [sidebar_is_hidden, setSidebarIsHidden] = useState(
+		window_width < 769
+	);
 	const [sidebar_is_open, setSidebarIsOpen] = useState(false);
 	const [search_is_open, setSearchIsOpen] = useState(false);
 

@@ -21,17 +21,13 @@ export const LayoutContent: React.ComponentType<Props> = props => {
 	// If the block melonpan-block-post-list is in use,
 	// add event listeners to its links to load the posts dynamically.
 	useEffect(() => {
-		if (!content_ref.current || is_loading) {
-			return;
-		}
+		if (!content_ref.current || is_loading) return;
 
 		const links = content_ref.current.querySelectorAll("a");
 
 		[...links].forEach(link =>
-			link.addEventListener("click", (e: any) => {
-				if (e.shiftKey || e.ctrlKey || e.metaKey) {
-					return;
-				}
+			link.addEventListener("click", (e: MouseEvent) => {
+				if (e.shiftKey || e.ctrlKey || e.metaKey) return;
 
 				const href = link.getAttribute("href") || "";
 

@@ -33,7 +33,9 @@ export const MenuItem: React.ComponentType<MenuItem> = props => {
 		>
 			<Container {...props}>
 				<Span>{title}</Span>
-				{has_children && <Icon icon={is_open ? "collapse" : "expand"} />}
+				{has_children && (
+					<Icon icon={is_open ? "collapse" : "expand"} />
+				)}
 			</Container>
 		</Div>
 	);

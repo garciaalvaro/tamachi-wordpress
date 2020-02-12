@@ -14,10 +14,8 @@ export const NavigationBreadcrumbsItem: React.ComponentType<Props> = props => {
 			{url && !use_span ? (
 				<A
 					href={url}
-					onClick={(e: any) => {
-						if (e.shiftKey || e.ctrlKey || e.metaKey) {
-							return;
-						}
+					onClick={(e: React.MouseEvent) => {
+						if (e.shiftKey || e.ctrlKey || e.metaKey) return;
 
 						e.preventDefault();
 

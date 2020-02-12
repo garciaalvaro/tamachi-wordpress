@@ -14,7 +14,10 @@ export const getStringMatches = (
 	const search_value_lowercase = search_value.toLowerCase();
 
 	times(10, () => {
-		const index = string_lowercase.indexOf(search_value_lowercase, from_index);
+		const index = string_lowercase.indexOf(
+			search_value_lowercase,
+			from_index
+		);
 
 		if (index === -1) {
 			return false;
@@ -36,7 +39,10 @@ export const getStringMatches = (
 					: string.substring(before_index, index),
 			after:
 				after_index < string_length
-					? `${string.substring(index + search_value_length, after_index)}...`
+					? `${string.substring(
+							index + search_value_length,
+							after_index
+					  )}...`
 					: string.substring(index + search_value_length, after_index)
 		});
 	});

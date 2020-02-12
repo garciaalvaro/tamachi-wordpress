@@ -25,7 +25,8 @@ export const useLoadPage = () => {
 	const updatePage = (html_string: string) => {
 		const html = new DOMParser().parseFromString(html_string, "text/html");
 
-		const document_title = html.getElementsByTagName("title")[0].textContent;
+		const document_title = html.getElementsByTagName("title")[0]
+			.textContent;
 
 		if (document_title) {
 			document.title = document_title;
@@ -43,12 +44,16 @@ export const useLoadPage = () => {
 		const scripts_raw = html.getElementsByTagName("script");
 
 		if (scripts_raw) {
-			const { scripts, styles, page_data } = getPageData([...scripts_raw]);
+			const { scripts, styles, page_data } = getPageData([
+				...scripts_raw
+			]);
 
 			addScripts(scripts);
 			addStyles(styles);
 
-			const { template, template_data, layout } = preparePageData(page_data);
+			const { template, template_data, layout } = preparePageData(
+				page_data
+			);
 
 			setTemplate(template);
 			setTemplateData(template_data);
@@ -72,7 +77,8 @@ export const useLoadPage = () => {
 				setTemplate("error404");
 				setContent(
 					__(
-						"It looks like nothing was found at this location. Maybe try one of the links in the sidebar or a search?"
+						"It looks like nothing was found at this location. " +
+							"Maybe try one of the links in the sidebar or a search?"
 					)
 				);
 				setTitle(__("Oops! That page can't be found."));
@@ -103,9 +109,7 @@ export const useLoadPage = () => {
 		const html = await fetchHtml(url);
 
 		// If the counter is not the same these are the results from an outdated fetch.
-		if (!html || counter_before_fetch !== counter.current) {
-			return;
-		}
+		if (!html || counter_before_fetch !== counter.current) return;
 
 		updatePage(html);
 	};

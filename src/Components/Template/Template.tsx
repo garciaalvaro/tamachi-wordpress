@@ -7,7 +7,7 @@ import { LayoutSingular } from "../LayoutSingular/LayoutSingular";
 import { LayoutHome } from "../LayoutHome/LayoutHome";
 import { TemplateContainer } from "./TemplateContainer";
 
-export const Template: React.ComponentType = props => {
+export const Template: React.ComponentType = () => {
 	const { template, template_data } = useContext(ContextView);
 
 	return (

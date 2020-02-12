@@ -31,7 +31,7 @@ const getLabel = (template: Template, template_data: TemplateData) => {
 	}
 };
 
-export const LayoutArchiveToolbar: React.ComponentType = props => {
+export const LayoutArchiveToolbar: React.ComponentType = () => {
 	const { template, template_data } = useContext(ContextView);
 	const [label, setLabel] = useState(getLabel(template, template_data));
 	const { items } = template_data;

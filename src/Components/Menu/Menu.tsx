@@ -5,7 +5,7 @@ import { Div } from "utils/Components";
 import { ContextSidebar } from "../Context/ContextSidebar";
 import { MenuItem } from "./MenuItem";
 
-export const Menu: React.ComponentType = props => {
+export const Menu: React.ComponentType = () => {
 	const { menu } = useContext(ContextSidebar);
 
 	return (

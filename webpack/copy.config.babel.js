@@ -17,8 +17,8 @@ export default {
 					"_extras/**",
 					"types/**",
 					"_temp.js",
-					"_release",
-					"assets-repo/**",
+					"_release/**",
+					"docs/**",
 					"node_modules/**",
 					"package.json",
 					"package-lock.json",
@@ -28,7 +28,8 @@ export default {
 					"jest.*",
 					"*config.js",
 					"*config.json",
-					"types.d.ts"
+					"types.d.ts",
+					"webpack/**"
 				]
 			}
 		])

@@ -12,7 +12,9 @@ export const Context: React.ComponentType<Props> = props => {
 		<ContextViewProvider>
 			<ContextScriptsProvider>
 				<ContextSidebarProvider>
-					<ContextContentProvider>{props.children}</ContextContentProvider>
+					<ContextContentProvider>
+						{props.children}
+					</ContextContentProvider>
 				</ContextSidebarProvider>
 			</ContextScriptsProvider>
 		</ContextViewProvider>
