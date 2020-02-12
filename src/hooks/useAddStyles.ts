@@ -21,7 +21,6 @@ export const useAddStyles = () => {
 						id,
 						deps,
 						src,
-						is_loading: true,
 						is_loaded: belongs_to_entry_page
 					};
 				});

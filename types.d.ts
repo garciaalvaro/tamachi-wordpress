@@ -128,7 +128,6 @@ type StyleRaw = {
 
 type Style = StyleRaw & {
 	is_loaded: boolean;
-	is_loading: boolean;
 };
 
 type Styles = Record<string, Style>;
