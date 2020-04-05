@@ -12,7 +12,7 @@ export const prepareMenu = (items_raw: MenuItemRaw[]): Menu => {
 			url: url_raw,
 			title,
 			menu_item_parent,
-			object_id
+			object_id,
 		} = item_raw;
 		const parent_id = parseInt(menu_item_parent);
 		const children_id = items_raw.filter(
@@ -44,7 +44,7 @@ export const prepareMenu = (items_raw: MenuItemRaw[]): Menu => {
 			has_children: !!children_id.length,
 			is_open: false,
 			ancestors_id,
-			ancestor_is_closed: false
+			ancestor_is_closed: false,
 		};
 	}, []);
 

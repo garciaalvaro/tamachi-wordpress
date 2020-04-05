@@ -32,7 +32,7 @@ const page_data = preparePageData(window.tamachi_page_data);
 const {
 	template: initial_template,
 	template_data: initial_template_data,
-	layout: initial_layout
+	layout: initial_layout,
 } = page_data;
 
 export const ContextView = createContext<ContextProps>({
@@ -47,7 +47,7 @@ export const ContextView = createContext<ContextProps>({
 	url: window.location.href,
 	setUrl: noop,
 	layout: initial_layout,
-	setLayout: noop
+	setLayout: noop,
 });
 
 export const ContextViewProvider: React.ComponentType<ProviderProps> = props => {
@@ -74,7 +74,7 @@ export const ContextViewProvider: React.ComponentType<ProviderProps> = props => 
 				url,
 				setUrl,
 				layout,
-				setLayout
+				setLayout,
 			}}
 		>
 			{props.children}

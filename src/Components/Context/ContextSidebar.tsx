@@ -29,7 +29,7 @@ export const ContextSidebar = createContext<ContextProps>({
 	search_is_open: false,
 	setSearchIsOpen: noop,
 	menu: [],
-	setMenu: noop
+	setMenu: noop,
 });
 
 export const ContextSidebarProvider: React.ComponentType<ProviderProps> = props => {
@@ -50,7 +50,7 @@ export const ContextSidebarProvider: React.ComponentType<ProviderProps> = props 
 				search_is_open,
 				setSearchIsOpen,
 				menu,
-				setMenu
+				setMenu,
 			}}
 		>
 			{props.children}

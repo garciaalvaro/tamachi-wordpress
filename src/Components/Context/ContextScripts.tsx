@@ -16,7 +16,7 @@ export const ContextScripts = createContext<ContextProps>({
 	scripts: {},
 	setScripts: noop,
 	styles: {},
-	setStyles: noop
+	setStyles: noop,
 });
 
 export const ContextScriptsProvider: React.ComponentType<ProviderProps> = props => {
@@ -29,7 +29,7 @@ export const ContextScriptsProvider: React.ComponentType<ProviderProps> = props 
 				scripts,
 				setScripts,
 				styles,
-				setStyles
+				setStyles,
 			}}
 		>
 			{props.children}
