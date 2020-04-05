@@ -29,7 +29,7 @@ export const useWindowSize = (time = 300) => {
 		time,
 		{
 			leading: true,
-			trailing: true
+			trailing: true,
 		}
 	);
 

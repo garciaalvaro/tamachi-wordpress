@@ -13,8 +13,8 @@ export const useFetchMenu = () => {
 		const fetchMenu = async () => {
 			const menu = await apiFetch<MenuRaw>({
 				path: addQueryArgs("/tamachi/v1/menu", {
-					menu_name: "tamachi-sidebar"
-				})
+					menu_name: "tamachi-sidebar",
+				}),
 			});
 
 			if (!menu) return;

@@ -45,7 +45,7 @@ export const useHandleScripts = () => {
 				is_loaded,
 				is_loading,
 				deps,
-				deps_loaded
+				deps_loaded,
 			} = script;
 
 			if (is_loading || is_loaded || deps_loaded.length !== deps.length)

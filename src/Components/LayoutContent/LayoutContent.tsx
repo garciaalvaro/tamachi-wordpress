@@ -51,7 +51,7 @@ export const LayoutContent: React.ComponentType<Props> = props => {
 			ref={content_ref}
 			dangerouslySetInnerHTML={{
 				// content is already sanitized. See ContextContent setContent.
-				__html: content
+				__html: content,
 			}}
 		/>
 	);

@@ -17,7 +17,7 @@ export const AppContainer: React.ComponentType<Props> = props => {
 			className={[
 				`template-${template}`,
 				`layout-${layout}`,
-				is_loading ? "is_loading" : "no-is_loading"
+				is_loading ? "is_loading" : "no-is_loading",
 			]}
 		>
 			{children}

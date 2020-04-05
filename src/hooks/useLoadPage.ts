@@ -16,7 +16,7 @@ export const useLoadPage = () => {
 		setTemplate,
 		setTemplateData,
 		setLayout,
-		setUrl
+		setUrl,
 	} = useContext(ContextView);
 	const { setContent, setTitle } = useContext(ContextContent);
 	const addScripts = useAddScripts();
@@ -45,7 +45,7 @@ export const useLoadPage = () => {
 
 		if (scripts_raw) {
 			const { scripts, styles, page_data } = getPageData([
-				...scripts_raw
+				...scripts_raw,
 			]);
 
 			addScripts(scripts);
@@ -68,7 +68,7 @@ export const useLoadPage = () => {
 
 		const html = await apiFetch({
 			parse: false,
-			url
+			url,
 		})
 			.then(response => response.text())
 			.catch(() => {

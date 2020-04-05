@@ -11,7 +11,7 @@ export const MenuItem: React.ComponentType<MenuItem> = props => {
 		is_active,
 		has_children,
 		ancestors_id,
-		ancestor_is_closed
+		ancestor_is_closed,
 	} = props;
 	const sibling_is_active = useMenuItemSiblingIsActive(ancestors_id);
 	const Container = url ? MenuItemLink : MenuItemButton;
@@ -28,7 +28,7 @@ export const MenuItem: React.ComponentType<MenuItem> = props => {
 				has_children ? "has_children" : "no-has_children",
 				is_active ? "is_active" : null,
 				is_open ? "is_open" : null,
-				sibling_is_active ? "sibling-is_active" : null
+				sibling_is_active ? "sibling-is_active" : null,
 			]}
 		>
 			<Container {...props}>
