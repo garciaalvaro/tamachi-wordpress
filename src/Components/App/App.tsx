@@ -7,7 +7,7 @@ import {
 	useHandleScripts,
 	useHandleStyles,
 	useHandleUrlChanges,
-	useHandleSidebarIsHidden
+	useHandleSidebarIsHidden,
 } from "hooks";
 import { AppContainer } from "./AppContainer";
 import { Template } from "../Template/Template";

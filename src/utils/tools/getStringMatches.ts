@@ -43,7 +43,10 @@ export const getStringMatches = (
 							index + search_value_length,
 							after_index
 					  )}...`
-					: string.substring(index + search_value_length, after_index)
+					: string.substring(
+							index + search_value_length,
+							after_index
+					  ),
 		});
 	});
 

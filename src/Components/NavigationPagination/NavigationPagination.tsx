@@ -27,7 +27,7 @@ export const NavigationPagination: React.ComponentType = () => {
 		setPages(
 			times(pages_total, index => ({
 				number: index + 1,
-				url: preparePaginationUrl(url, index + 1)
+				url: preparePaginationUrl(url, index + 1),
 			}))
 		);
 	}, [pages_total]);

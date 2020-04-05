@@ -17,7 +17,7 @@ export const ContextContent = createContext<ContextProps>({
 	title: "",
 	setTitle: noop,
 	content: "",
-	setContent: noop
+	setContent: noop,
 });
 
 const getTitle = () => {
@@ -57,7 +57,7 @@ export const ContextContentProvider: React.ComponentType<ProviderProps> = props 
 				setContent: (content: string) =>
 					setContent(
 						DOMPurify.sanitize(content, { ADD_ATTR: ["target"] })
-					)
+					),
 			}}
 		>
 			{props.children}

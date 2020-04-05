@@ -13,7 +13,7 @@ const entry_page_script_ids = [
 	"wp-hooks",
 	"wp-i18n",
 	"wp-polyfill",
-	"wp-url"
+	"wp-url",
 ];
 
 export const useAddScripts = () => {
@@ -48,7 +48,7 @@ export const useAddScripts = () => {
 						is_loaded,
 						is_loading,
 						is_reexecutable,
-						deps_loaded: []
+						deps_loaded: [],
 					};
 				});
 
@@ -67,7 +67,7 @@ export const useAddScripts = () => {
 
 					draft_scripts_old[script.id] = {
 						...draft_scripts_old[script.id],
-						deps_loaded
+						deps_loaded,
 					};
 				});
 			})

@@ -21,7 +21,7 @@ export const useAddStyles = () => {
 						id,
 						deps,
 						src,
-						is_loaded: belongs_to_entry_page
+						is_loaded: belongs_to_entry_page,
 					};
 				});
 			})

@@ -48,8 +48,8 @@ export const Search: React.ComponentType = () => {
 
 			const results = await apiFetch<SearchResultRaw[] | null>({
 				path: addQueryArgs("/tamachi/v1/search", {
-					query
-				})
+					query,
+				}),
 			});
 
 			setFetching(false);
@@ -74,7 +74,7 @@ export const Search: React.ComponentType = () => {
 							title_raw: title,
 							title: getStringMatches(title, query),
 							content: getStringMatches(content, query),
-							ancestors
+							ancestors,
 						};
 					})
 					.filter(({ title, content }) => {
@@ -91,7 +91,7 @@ export const Search: React.ComponentType = () => {
 			id="search"
 			className={[
 				writing ? "writing" : null,
-				fetching ? "fetching" : null
+				fetching ? "fetching" : null,
 			]}
 		>
 			<ButtonSearch />

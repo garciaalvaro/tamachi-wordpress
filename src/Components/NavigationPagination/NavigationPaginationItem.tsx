@@ -19,7 +19,7 @@ export const NavigationPaginationItem: React.ComponentType<Props> = props => {
 				"navigation-pagination-link",
 				is_active ? "is_active" : null,
 				is_first ? "is_first" : null,
-				is_last ? "is_last" : null
+				is_last ? "is_last" : null,
 			]}
 			href={url}
 			onClick={(e: React.MouseEvent) => {

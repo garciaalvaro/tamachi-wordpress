@@ -22,7 +22,7 @@ export const Sidebar: React.ComponentType = () => {
 		search_is_open,
 		sidebar_is_open,
 		sidebar_is_hidden,
-		menu
+		menu,
 	} = useContext(ContextSidebar);
 
 	const nav_ref = useRef<HTMLDivElement | null>(null);

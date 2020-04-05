@@ -11,7 +11,7 @@ export const getPageData = (scripts: HTMLScriptElement[]) => {
 		return {
 			scripts: [],
 			styles: [],
-			page_data: {}
+			page_data: {},
 		};
 	}
 
@@ -22,6 +22,6 @@ export const getPageData = (scripts: HTMLScriptElement[]) => {
 	return {
 		scripts: json && json[0] ? JSON.parse(json[0]) : [],
 		styles: json && json[1] ? JSON.parse(json[1]) : [],
-		page_data: json && json[2] ? JSON.parse(json[2]) : {}
+		page_data: json && json[2] ? JSON.parse(json[2]) : {},
 	};
 };

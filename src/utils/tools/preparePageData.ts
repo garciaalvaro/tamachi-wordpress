@@ -12,7 +12,7 @@ const template_data_default = {
 	site_title: "",
 	query: "",
 	name: "",
-	items: []
+	items: [],
 };
 
 export const preparePageData = (page_data?: PageDataRaw): PageData => {
@@ -20,7 +20,7 @@ export const preparePageData = (page_data?: PageDataRaw): PageData => {
 		return {
 			layout: layout_default,
 			template: template_default,
-			template_data: template_data_default
+			template_data: template_data_default,
 		};
 	}
 
@@ -32,6 +32,6 @@ export const preparePageData = (page_data?: PageDataRaw): PageData => {
 		template_data: defaults<
 			PageDataRaw["template_data"],
 			PageData["template_data"]
-		>(template_data, template_data_default)
+		>(template_data, template_data_default),
 	};
 };

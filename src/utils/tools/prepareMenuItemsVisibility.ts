@@ -21,7 +21,7 @@ export const prepareMenuItemsVisibility = (
 			...item,
 			// If the new item has an url update the active item.
 			is_active: (item_active && item.id === item_active.id) || false,
-			is_open
+			is_open,
 		};
 	});
 
@@ -35,6 +35,6 @@ export const prepareMenuItemsVisibility = (
 			}
 
 			return !ancestor.is_open;
-		}).length
+		}).length,
 	}));
 };
