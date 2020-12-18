@@ -19,7 +19,7 @@
 		"prettier": "prettier --check 'src/**/*.{ts,tsx}'"
 	},
 	"dependencies": {
-		"dompurify": "^2.0.8",
+		"dompurify": "^2.0.17",
 		"immer": "^6.0.3",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
